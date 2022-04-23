@@ -1,12 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+
+import Layout from "./Components/Layout";
+import Page from "./Components/Page";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Layout>
+      <Page />
+    </Layout>
   </React.StrictMode>
 );

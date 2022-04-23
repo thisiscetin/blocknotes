@@ -23,5 +23,4 @@ A simple note taking application on your favourite EVM-compatible blockchain.
 
 ## environment variables
 
-- application will need to know contract address - blockchain id to run
-
+  - application will need to know contract address - blockchain id to run and an ipfs gateway address
