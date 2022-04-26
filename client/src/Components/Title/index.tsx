@@ -10,6 +10,11 @@ const Title = styled.input`
   :focus {
     outline: none;
   }
+
+  ::placeholder {
+    color: #d2d2d2;
+    font-weight: normal;
+  }
 `;
 
 interface TitleProps {
@@ -19,6 +24,10 @@ interface TitleProps {
 
 export default function ({ title, onTitleChange }: TitleProps) {
   return (
-    <Title value={title} onChange={(e) => onTitleChange(e.target.value)} />
+    <Title
+      placeholder="click and give me a title.."
+      value={title}
+      onChange={(e) => onTitleChange(e.target.value)}
+    />
   );
 }

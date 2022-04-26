@@ -8,6 +8,7 @@ const Body = styled.textarea`
   resize: none;
   height: 100vh;
   font-size: 1.1rem;
+  color: #1d1c1c;
 
   :focus {
     outline: none;
