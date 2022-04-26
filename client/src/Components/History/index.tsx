@@ -1,4 +1,6 @@
 import styled from "styled-components/macro";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { selectCount, increment } from "../../features/counter/counterSlice";
 
 const History = styled.div`
   width: 280px;
@@ -24,8 +26,12 @@ const SelectedPage = styled.p`
 `;
 
 export default function () {
+  const count = useAppSelector(selectCount);
+  const dispatch = useAppDispatch();
+
   return (
     <History>
+      <button onClick={() => dispatch(increment())}>{count}</button>
       <Header>history</Header>
       <SelectedPage>note 1</SelectedPage>
 
