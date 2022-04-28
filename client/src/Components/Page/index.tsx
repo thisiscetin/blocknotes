@@ -1,4 +1,13 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import {
+  titleChange,
+  bodyChange,
+  selectedTitle,
+  selectedBody,
+  selectedNote,
+  noteChange,
+} from "../../features/notes/notesSlice";
 import styled from "styled-components/macro";
 
 import Title from "../Title";
@@ -13,13 +22,20 @@ const Page = styled.div`
 `;
 
 export default function () {
-  const [title, setTitle] = useState<string>("");
-  const [body, setBody] = useState<string>("");
+  const title = useAppSelector(selectedTitle);
+  const body = useAppSelector(selectedBody);
+  const noteIndex = useAppSelector(selectedNote);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(noteChange(noteIndex));
+  }, [noteIndex, dispatch]);
 
   return (
     <Page>
-      <Title title={title} onTitleChange={setTitle} />
-      <Body content={body} onContentChange={setBody} />
+      <Title title={title} onTitleChange={(s) => dispatch(titleChange(s))} />
+      <Body content={body} onContentChange={(s) => dispatch(bodyChange(s))} />
     </Page>
   );
 }

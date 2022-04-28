@@ -13,6 +13,11 @@ const Body = styled.textarea`
   :focus {
     outline: none;
   }
+
+  ::placeholder {
+    color: #d2d2d2;
+    font-weight: normal;
+  }
 `;
 
 interface BodyProps {
@@ -22,6 +27,10 @@ interface BodyProps {
 
 export default function ({ content, onContentChange }: BodyProps) {
   return (
-    <Body value={content} onChange={(e) => onContentChange(e.target.value)} />
+    <Body
+      placeholder="and write something about me.."
+      value={content}
+      onChange={(e) => onContentChange(e.target.value)}
+    />
   );
 }

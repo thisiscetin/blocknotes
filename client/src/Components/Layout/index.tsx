@@ -7,6 +7,7 @@ import Sync from "../Sync";
 
 const Layout = styled.div`
   display: flex;
+  max-height: 100vh;
 `;
 
 export default function ({ children }: { children: ReactNode }) {
