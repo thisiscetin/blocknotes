@@ -1,5 +1,7 @@
 import styled from "styled-components/macro";
+
 import Header from "../Header";
+import Button from "../Button";
 
 const Sync = styled.div`
   width: 280px;
@@ -9,16 +11,21 @@ const Sync = styled.div`
   flex-basis: 20%;
 `;
 
-const LastSync = styled.p`
-  font-size: 1rem;
-  margin: 0.2rem 0;
+const Desc = styled.p`
+  font-size: 0.9rem;
+  color: #d2d2d2;
 `;
 
 export default function () {
   return (
     <Sync>
       <Header>sync</Header>
-      <LastSync>last sync: 22-04-16 13:14:00</LastSync>
+      <Button>🔗 connect wallet</Button>
+
+      <Desc>
+        To be able to access your previous data, or sync your changes with the
+        blockchain you need to connect your wallet.
+      </Desc>
     </Sync>
   );
 }

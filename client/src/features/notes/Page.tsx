@@ -7,11 +7,11 @@ import {
   selectedBody,
   selectedNote,
   noteChange,
-} from "../../features/notes/notesSlice";
+} from "./notesSlice";
 import styled from "styled-components/macro";
 
-import Title from "../Title";
-import Body from "../Body";
+import Title from "../../components/Title";
+import Body from "../../components/Body";
 
 const Page = styled.div`
   display: flex;
