@@ -7,7 +7,7 @@ const Body = styled.textarea`
   border: none;
   resize: none;
   height: 100vh;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #1d1c1c;
 
   :focus {

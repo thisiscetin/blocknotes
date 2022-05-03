@@ -32,6 +32,7 @@ const Line = styled.div<LineProps>`
   margin: 0.2rem 0;
   background-color: ${(props) => (props.selected ? "#f2f2f2" : "none")};
   color: ${(props) => (props.selected ? "none" : "#d2d2d2")};
+  transition: 0.2s;
   cursor: pointer;
 
   :hover {
@@ -47,7 +48,7 @@ const FirstLine = styled.div`
 
 const Title = styled.p`
   font-size: 0.9rem;
-  margin: 0.2rem 0;
+  margin: 0.1rem 0;
 `;
 
 const DeleteCTA = styled.span`
@@ -61,9 +62,9 @@ const DeleteCTA = styled.span`
 `;
 
 const Time = styled.div`
+  text-align: right;
   margin-top: 0.2rem;
-  font-size: 0.8rem;
-  color: #d2d2d2;
+  font-size: 0.7rem;
 `;
 
 export default function () {
@@ -83,7 +84,7 @@ export default function () {
   return (
     <Navigation>
       <Header>blocknotes</Header>
-      <Button onClick={() => dispatch(addNote())}>new note</Button>
+      <Button onClick={() => dispatch(addNote())}>📓 new note</Button>
 
       <br />
 
@@ -94,9 +95,14 @@ export default function () {
           onClick={() => dispatch(noteChange(index))}
         >
           <FirstLine>
-            <Title>{note.title.substring(0, 14) || "untitled"}</Title>
+            {note.title.length > 15 ? (
+              <Title>{note.title.substring(0, 16)}...</Title>
+            ) : (
+              <Title>{note.title || "untitled"}</Title>
+            )}
+
             {notesList.length > 1 ? (
-              <DeleteCTA onClick={() => deleteNote(index)}>[remove]</DeleteCTA>
+              <DeleteCTA onClick={() => deleteNote(index)}>[X]</DeleteCTA>
             ) : null}
           </FirstLine>
           <Time>
