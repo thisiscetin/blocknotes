@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
+
 import moment from "moment";
-import { v4 } from "uuid";
 
 export interface NoteState {
   title: string;
@@ -11,14 +11,14 @@ export interface NoteState {
 }
 
 export interface NotesState {
-  versionHistory: string[];
   selectedNote: number;
+  version: string;
   notes: NoteState[];
 }
 
 const initialState: NotesState = {
-  versionHistory: [v4()],
   selectedNote: 0,
+  version: "",
   notes: [
     {
       title: "",
@@ -47,11 +47,13 @@ export const notesSlice = createSlice({
         body: "",
         createdAt: moment().unix(),
       });
-
       state.selectedNote = state.notes.length - 1;
     },
     removeNote: (state, action: PayloadAction<number>) => {
       state.notes.splice(action.payload, 1);
+    },
+    setVersion: (state, action: PayloadAction<string>) => {
+      state.version = action.payload;
     },
   },
 });
@@ -66,9 +68,13 @@ export const notes = (state: RootState) => state.notes.notes;
 
 export const selectedNote = (state: RootState) => state.notes.selectedNote;
 
-export const versionHistory = (state: RootState) => state.notes.versionHistory;
-
-export const { titleChange, bodyChange, noteChange, addNote, removeNote } =
-  notesSlice.actions;
+export const {
+  titleChange,
+  bodyChange,
+  noteChange,
+  addNote,
+  removeNote,
+  setVersion,
+} = notesSlice.actions;
 
 export default notesSlice.reducer;

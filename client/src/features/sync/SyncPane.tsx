@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
-import Header from "../Header";
-import Button from "../Button";
+import Header from "../../components/Header";
+import Button from "../../components/Button";
 
 const Sync = styled.div`
   width: 280px;

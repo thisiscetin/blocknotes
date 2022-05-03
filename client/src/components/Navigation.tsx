@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { useAppSelector, useAppDispatch } from "../app/hooks";
 import moment from "moment";
 
 import {
@@ -8,10 +8,10 @@ import {
   addNote,
   selectedNote,
   removeNote,
-} from "../../features/notes/notesSlice";
+} from "../features/notes/notesSlice";
 
-import Button from "../Button";
-import Header from "../Header";
+import Button from "./Button";
+import Header from "./Header";
 
 const Navigation = styled.div`
   width: 280px;
@@ -88,7 +88,7 @@ export default function () {
 
       <br />
 
-      {notesList.map((note, index) => (
+      {notesList.map((note, index: number) => (
         <Line
           key={index}
           selected={selectedIndex === index}

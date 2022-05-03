@@ -1,8 +1,8 @@
 import styled from "styled-components/macro";
-import { useAppSelector } from "../../app/hooks";
-import { versionHistory } from "../../features/notes/notesSlice";
+// import { useAppSelector } from "../app/hooks";
+// import { versionHistory } from "../features/notes/notesSlice";
 
-import Header from "../Header";
+import Header from "./Header";
 
 const History = styled.div`
   width: 280px;
@@ -35,7 +35,7 @@ const SectionHeader = styled.p`
 `;
 
 export default function () {
-  const vHistory = useAppSelector(versionHistory);
+  // const vHistory = useAppSelector(versionHistory);
 
   return (
     <History>
@@ -47,9 +47,9 @@ export default function () {
 
       <SectionHeader>live version</SectionHeader>
       <ul>
-        {vHistory.map((v) => (
+        {/* {vHistory.map((v: string) => (
           <Line>{v.substring(0, 23)}</Line>
-        ))}
+        ))} */}
       </ul>
 
       <br />
