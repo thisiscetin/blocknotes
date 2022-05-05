@@ -68,6 +68,8 @@ export const notes = (state: RootState) => state.notes.notes;
 
 export const selectedNote = (state: RootState) => state.notes.selectedNote;
 
+export const version = (state: RootState) => state.notes.version;
+
 export const {
   titleChange,
   bodyChange,

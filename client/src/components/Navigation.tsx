@@ -42,8 +42,10 @@ const Line = styled.div<LineProps>`
 `;
 
 const FirstLine = styled.div`
+  font-size: 0.9rem;
   display: flex;
   justify-content: space-between;
+  font-weight: bold;
 `;
 
 const Title = styled.p`
@@ -52,7 +54,6 @@ const Title = styled.p`
 `;
 
 const DeleteCTA = styled.span`
-  font-size: 0.9rem;
   border: none;
   padding: 0.1rem;
   background: none;

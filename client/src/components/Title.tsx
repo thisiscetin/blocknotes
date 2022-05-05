@@ -2,10 +2,10 @@ import styled from "styled-components/macro";
 
 const Title = styled.input`
   font-size: 1.4rem;
-  font-family: "Merriweather Sans", sans-serif;
+  font-weight: bold;
   border: none;
   padding: 0.6rem;
-  margin-top: 0.4rem;
+  margin-top: 1.1rem;
 
   :focus {
     outline: none;
