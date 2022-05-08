@@ -7,6 +7,7 @@ import Sync from "../features/sync/SyncPane";
 const RightPane = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: #f2f2f2;
 `;
 
 const Layout = styled.div`

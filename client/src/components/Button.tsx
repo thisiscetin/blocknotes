@@ -1,21 +1,18 @@
 import styled from "styled-components/macro";
 
 const Button = styled.button`
-  padding: 0.2rem 0.4rem;
-  font-size: 1.2rem;
-  font-weight: bold;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.1rem;
   margin: 1.4rem 0;
-  border: 0.2rem solid gray;
-  border-radius: 0.6rem;
   transition: 0.2s;
   background-color: #d2d2d2;
+  border: 0.1rem solid black;
   color: black;
 
   cursor: pointer;
 
   :hover {
-    background-color: black;
-    color: white;
+    background-color: #a2a2a2;
   }
 `;
 

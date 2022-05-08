@@ -16,10 +16,22 @@ export interface NotesState {
   notes: NoteState[];
 }
 
+const loadState = () => {
+  try {
+    const serializedState = localStorage.getItem("notes");
+    if (serializedState === null) {
+      return undefined;
+    }
+    return JSON.parse(serializedState).notes;
+  } catch (err) {
+    return undefined;
+  }
+};
+
 const initialState: NotesState = {
   selectedNote: 0,
   version: "",
-  notes: [
+  notes: loadState() || [
     {
       title: "",
       body: "",
@@ -42,12 +54,12 @@ export const notesSlice = createSlice({
       state.selectedNote = Math.min(action.payload, state.notes.length - 1);
     },
     addNote: (state) => {
-      state.notes.push({
+      state.notes.unshift({
         title: "",
         body: "",
         createdAt: moment().unix(),
       });
-      state.selectedNote = state.notes.length - 1;
+      state.selectedNote = 0;
     },
     removeNote: (state, action: PayloadAction<number>) => {
       state.notes.splice(action.payload, 1);

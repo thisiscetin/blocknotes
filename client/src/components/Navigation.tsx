@@ -17,7 +17,8 @@ const Navigation = styled.div`
   width: 280px;
   overflow-y: auto;
   padding: 0.8rem;
-  border-right: 1px dotted #d2d2d2;
+  border-right: 0.1rem dotted #d2d2d2;
+  background-color: #f2f2f2;
 `;
 
 interface LineProps {
@@ -28,9 +29,10 @@ const Line = styled.div<LineProps>`
   display: flex;
   flex-direction: column;
   border: 1px solid #d2d2d2;
-  padding: 0.2rem;
+  border-radius: 0.2rem;
+  padding: 0.3rem;
   margin: 0.2rem 0;
-  background-color: ${(props) => (props.selected ? "#f2f2f2" : "none")};
+  background-color: ${(props) => (props.selected ? "white" : "none")};
   color: ${(props) => (props.selected ? "none" : "#d2d2d2")};
   transition: 0.2s;
   cursor: pointer;
@@ -42,10 +44,9 @@ const Line = styled.div<LineProps>`
 `;
 
 const FirstLine = styled.div`
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
 `;
 
 const Title = styled.p`
