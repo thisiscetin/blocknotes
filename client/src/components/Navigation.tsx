@@ -50,7 +50,7 @@ const FirstLine = styled.div`
 `;
 
 const Title = styled.p`
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin: 0.1rem 0;
 `;
 
@@ -108,7 +108,7 @@ export default function () {
             ) : null}
           </FirstLine>
           <Time>
-            {moment.unix(note.createdAt).local().format("YYYY-MM-DD HH:mm")}
+            {moment.unix(note.createdAt).local().format("MMMM Do YYYY - HH:mm")}
           </Time>
         </Line>
       ))}

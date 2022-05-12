@@ -5,7 +5,7 @@ const Title = styled.input`
   font-weight: bold;
   border: none;
   padding: 0.6rem;
-  margin-top: 1rem;
+  margin-top: 0.6rem;
 
   :focus {
     outline: none;
@@ -25,7 +25,8 @@ interface TitleProps {
 export default function ({ title, onTitleChange }: TitleProps) {
   return (
     <Title
-      placeholder="click and give me a title.."
+      autoFocus
+      placeholder="give me a title and hit tab"
       value={title}
       onChange={(e) => onTitleChange(e.target.value)}
     />

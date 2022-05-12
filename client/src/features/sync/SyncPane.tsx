@@ -23,7 +23,7 @@ export default function () {
       <Button>🔗 connect wallet</Button>
 
       <Desc>
-        To be able to access your previous data, or sync your changes with the
+        To access your data on different machines and sync your changes to the
         blockchain you need to connect your wallet.
       </Desc>
     </Sync>
